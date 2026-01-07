@@ -1,0 +1,904 @@
+/* =========================
+   KOLORE – BASE STYLES
+   ========================= */
+
+:root {
+  --bg: #ff0098;
+  --text: #fff;
+  --muted: #ffe6f2;
+  --accent: #fa821d;
+  --max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.k-body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* HEADER */
+.k-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  border-bottom: none;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.k-header-inner {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.k-logo a {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.7em; /* ~30% smaller */
+}
+
+/* Improve contrast for header links over video section */
+.k-header a {
+  color: #fff;
+}
+
+.k-nav-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.k-nav-item a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.4rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.k-nav-item a:hover {
+  color: rgb(203, 255, 100);
+  transform: scale(1.9);
+}
+
+
+/* MAIN */
+
+
+/* HERO */
+.k-hero{
+  height: 100vh;            /* ocupa toda la pantalla */
+  display: flex;            /* control fino del espacio */
+  flex-direction: column;
+
+  justify-content: center;  /* centra el bloque en altura */
+  align-items: center;
+  text-align: center;
+
+  padding: 110px 24px 48px; /* espacio para el header fijo + aire abajo */
+  gap: 14px;                /* separación pequeña entre elementos */
+}
+.k-hero-quote {
+  font-size: clamp(2rem, 6vw, 8rem);
+  line-height: 0.8;
+  font-weight: 400;
+  font-family: 'Monoton', sans-serif;
+  color: rgb(203, 255, 100);
+ 
+  white-space: pre;     /* respeta \n y NO hace wrap automático */
+  overflow: hidden;  
+  line-height: 0.8;      
+  font-variant-ligatures: none;
+}
+.k-hero-quote { margin: 0; }
+.p-k-hero     { margin: 0; margin-top: 2px; }
+.k-hero-button{ margin: 0; margin-top: 6px; }
+
+.k-hero-title {
+  font-size: clamp(6rem, 8vw, 15rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.k-hero-subtitle {
+  color: var(--muted);
+  
+}
+
+.k-hero-button {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text);
+  background-color: transparent;
+  border: solid 2px rgb(203, 255, 100);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.k-hero-button:hover {
+  background-color: #fff;
+  color:#a8e46d;
+  transform: scale(1.1);
+
+}
+.p-k-hero {
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 700px;
+  margin: 10px;
+}
+
+@media (max-width: 768px){
+  .k-hero{
+    align-items: flex-start;
+    text-align: left;
+    padding: 110px 18px 48px;
+  }
+
+  .k-hero-button{
+    align-self: flex-start;
+  }
+}
+
+/* SECTIONS */
+.k-section {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 6rem 1rem;
+  height: auto;
+}
+
+/* Full-width override for video section */
+.k-section-video {
+  max-width: none;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.k-section-title,
+.k-era-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.k-section-text {
+  max-width: 600px;
+  color: var(--muted);
+}
+
+
+/* ERA */
+.k-section-era {
+  background: #fff;
+  border-left: 6px solid var(--accent);
+  padding-left: 2rem;
+}
+
+/* FINAL */
+.k-section-final {
+  text-align: center;
+}
+
+.k-final-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* FOOTER */
+.k-footer{
+  background: #95ff00;
+  color: #af00a0;
+  padding: 64px 24px;
+  text-align: center;
+}
+
+.k-footer-inner{
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.k-footer-left{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.k-footer-logo{
+  display: block;
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+}
+
+/* botón volver arriba */
+.k-footer-top{
+  appearance: none;
+  border: 4px solid rgba(255, 0, 234, 0.4);
+  background: transparent;
+  color: #ff01c0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+
+  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.k-footer-top:hover{
+  background: rgb(203, 255, 100);
+  color: #59ff00;
+  transform: translateY(-4px);
+  border-color: rgb(203, 255, 100);
+}
+
+.k-footer-arrow{
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+@media (max-width: 768px){
+  .k-footer-inner{
+    gap: 14px;
+  }
+
+  .k-footer-top{
+    margin-top: 8px;
+  }
+}
+
+/* =========================
+   VIDEO BACKGROUND SECTION
+   ========================= */
+
+.k-section-video {
+  position: relative;
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Capa del vídeo */
+.k-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Truco para que el iframe cubra todo */
+.k-video-bg iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  /* COVER technique for 16:9 videos (YouTube):
+     - width based on viewport width
+     - height derived from 16:9
+     - min-* ensures it still covers when viewport is tall/narrow (mobile)
+  */
+  width: 100vw;
+  height: calc(100vw * 9 / 16);
+  min-width: calc(100vh * 16 / 9);
+  min-height: 100vh;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* para que no se pueda clicar */
+}
+
+@media (max-width: 768px) {
+  .k-video-bg iframe {
+    /* a tiny overscan to avoid edge gaps on some mobile browsers */
+    min-width: calc(100vh * 16 / 9 + 2px);
+    min-height: calc(100vh + 2px);
+  }
+}
+
+/* Contenido encima del vídeo */
+.k-section-video .k-section-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* Oscurecer un poco el vídeo para que se lea el texto */
+.k-section-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+}
+
+
+/* =========================
+   SECCIÓN 2 · GRID COLORES
+   ========================= */
+
+.k-section-colors {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 100%;
+  height: auto;
+}
+
+.color-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(20rem, 8vw, 6rem);
+  text-transform: lowercase;
+}
+
+/* Colores chillones tipo diseño */
+.color-cell:nth-child(1) { background: #F6B6FF; color: #5A2D82; }
+.color-cell:nth-child(2) { background: #DFFF4F; color: #1E7F3A; }
+.color-cell:nth-child(3) { background: #FFD34D; color: #E34A4A; }
+.color-cell:nth-child(4) { background: #9B4DFF; color: #FF8C00; }
+.color-cell:nth-child(5) { background: #FF8C00; color: #FFD34D; }
+.color-cell:nth-child(6) { background: #FF5A8A; color: #3B2EFF; }
+
+/* =========================
+   GRID COLORES · MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+  .color-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .color-cell {
+    font-size: clamp(4rem, 20vw, 8rem);
+    aspect-ratio: 1 / 1;
+  }
+}
+
+section.separation-green{
+  background-color: #a8e46d ;
+  height: 50px;
+  width: 100%;
+}
+
+/* sección 4 */
+/* ===============================
+   CHECKER SECTION
+================================ */
+
+.checker-section {
+  position: relative;
+  min-height: 100vh;
+  background: #e43098;
+  overflow: hidden;
+}
+
+/* ===== CUADRADOS DE FONDO ===== */
+
+.checker-tiles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  --tile: 82px;
+  grid-auto-rows: var(--tile);
+  background: #e43098;
+  will-change: transform;
+}
+/* Ensure checker content is above the tiles */
+.checker-section > :not(.checker-tiles){
+  position: relative;
+  z-index: 6;
+}
+
+/* Keep the marquee on top */
+.checker-section .marquee{
+  z-index: 12;
+}
+
+.checker-tiles .tile {
+  width: var(--tile);
+  height: var(--tile);
+  background: transparent;
+}
+
+.checker-tiles .tile.blue {
+  background: #2f4be4;
+}
+
+/* ===== MARQUEE TEXTO ===== */
+
+.marquee {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 12;
+  pointer-events: none;
+}
+
+.marquee--offset {
+  top: 50%;
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 60px;
+  white-space: nowrap;
+  animation: marqueeMove 35s linear infinite;
+   animation-play-state: paused; 
+}
+.checker-section.k-snap-active .marquee-track{
+  animation-play-state: running;
+}
+.marquee--offset .marquee-track {
+  animation-duration: 1s;
+}
+
+.marquee span {
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(120px, 30vw, 500px);
+  line-height: 0.9;
+  color: white;
+  letter-spacing: -0.04em;
+}
+
+@keyframes marqueeMove {
+  from {
+    transform: translateX(120%);
+  }
+  to {
+    transform: translateX(-120%);
+  }
+}
+
+/* sección 3 */
+/* ===============================
+   SECTION 3 · ORANGE + BALL + LENS TEXT
+================================ */
+
+.k-ball-section {
+  background: #ffa200; /* naranja */
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Barra (si ya tienes k-bar, esto solo ayuda a que se vea bien en fondo naranja) */
+.k-bar--light {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  right: 32px;
+  z-index: 10;
+  color: #fff;
+}
+.k-bar--light a { color: #fff; text-decoration: none; }
+
+.ballStage {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Texto grande centrado */
+.ballText {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.82;
+  text-transform: uppercase;
+  font-size: clamp(64px, 11vw, 170px);
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap; /* evita saltos inesperados */
+}
+
+/* Texto base (oscuro) */
+.ballText--base {
+  color: rgba(2, 2, 249, 0.45); /* azul oscuro/transparente */
+  z-index: 2;
+}
+
+/* Texto “dentro de la bola”: se recorta con clip-path */
+.ballText--lens {
+  color: rgb(0, 255, 119); /* rosa claro */
+  z-index: 6;
+
+  /* Por defecto fuera */
+  clip-path: circle(0px at 0px 0px);
+}
+
+/* Bola */
+.ball {
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: #ff69cd; /* azul bola */
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  will-change: transform;
+}
+
+/* Ajuste mobile */
+@media (max-width: 768px) {
+  .ball { width: 700px; height: 700px; }
+  .ballText { font-size: clamp(44px, 12vw, 110px); top: 58%; }
+}
+
+/* EFECTO CIRCULO SECCIÓN 1 VIDEO */
+
+/* Capa de “tinte” encima del video */
+.k-video-bg { position: absolute; inset: 0; overflow: hidden; }
+
+.video-tint{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;                 /* aparece al hover */
+  transition: opacity .15s ease;
+
+  /* El “color” que vas a proyectar (puedes cambiarlo por gradiente) */
+  background: radial-gradient(circle at 30% 30%, #00ff77 0%, #ff0098 45%, #ffa200 100%);
+
+  /* Esto hace que la capa “tiña” el vídeo */
+  mix-blend-mode: screen;
+
+  /* Máscara circular (Safari necesita -webkit-) */
+  --x: 50%;
+  --y: 50%;
+  --r: 500px;
+
+  -webkit-mask-image: radial-gradient(circle var(--r) at var(--x) var(--y), #000 0 99%, transparent 100%);
+          mask-image: radial-gradient(circle var(--r) at var(--x) var(--y), #000 0 99%, transparent 100%);
+
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+
+/* Activa el “transformador” al pasar el ratón por la sección */
+.k-section-video:hover .video-tint{ opacity: 1; }
+
+/* sección 2 colores */
+/* =========================
+   SECCIÓN 2 · INTERACTIVE COLOR CELLS
+   ========================= */
+
+.k-section-colors{
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.color-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 100%;
+  min-height: 100vh;
+}
+
+.color-cell{
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  /* estos se definen por celda (variables) */
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* 1) Hover scale */
+.color-cell__btn{
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  color: inherit;
+
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(6rem, 10vw, 12rem);
+  text-transform: lowercase;
+
+  transition: transform 180ms ease;
+}
+.color-cell__btn:hover{
+  transform: scale(1.08);
+}
+
+/* 2) Panel invertido */
+.color-cell__panel{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  gap: 18px;
+  padding: 22px;
+
+  /* invertimos colores:
+     fondo = color de la K (fg)
+     texto = color del fondo original (bg) */
+  background: var(--fg);
+  color: var(--bg);
+
+  opacity: 0;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.color-cell__text{
+  margin: 0;
+  font: 600 14px/1.35 Inter, system-ui, sans-serif;
+  max-width: 34ch;
+}
+
+.color-cell__close{
+  justify-self: start;
+  appearance: none;
+  border: 2px solid currentColor;
+  background: transparent;
+  color: inherit;
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font: 800 12px/1 Inter, system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+/* Cortina (overlay) */
+.color-cell__curtain{
+  position: absolute;
+  inset: 0;
+  background: var(--fg);
+  transform: scaleY(0);
+  transform-origin: top;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* estados */
+.color-cell.is-open .color-cell__btn{
+  opacity: 0;
+  pointer-events: none;
+}
+.color-cell.is-open .color-cell__panel{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Colores (solo cambian variables) */
+.color-cell:nth-child(1){ --bg:#F6B6FF; --fg:#5A2D82; }
+.color-cell:nth-child(2){ --bg:#DFFF4F; --fg:#1E7F3A; }
+.color-cell:nth-child(3){ --bg:#FFD34D; --fg:#E34A4A; }
+.color-cell:nth-child(4){ --bg:#9B4DFF; --fg:#FF8C00; }
+.color-cell:nth-child(5){ --bg:#FF8C00; --fg:#FFD34D; }
+.color-cell:nth-child(6){ --bg:#FF5A8A; --fg:#3B2EFF; }
+
+@media (max-width:768px){
+  .color-grid{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+  .color-cell__btn{
+    font-size: clamp(5rem, 22vw, 9rem);
+  }
+}
+
+/* headers de secciones */
+.k-section-header{
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+.k-hero,
+.k-section-video,
+.k-section-colors,
+.k-ball-section,
+.checker-section{
+  position: relative;
+}
+
+/* sección final: three.js */
+.k-section-final{
+  position: relative;
+  min-height: 100vh;
+  background: #95ff00;
+  overflow: hidden;
+}
+
+#threeFinal{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.k-final-text{
+  position: relative;
+  z-index: 10;
+  color: #fff;
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-align: center;
+  max-width: 20ch;
+  margin: 0 auto;
+  padding-top: 10vh;
+}
+
+/* efecto scroll lento */
+/* =========================
+   SCROLL SNAP · encajonar por secciones
+   ========================= */
+
+html, body {
+  height: 100%;
+}
+
+/* Use your existing body class */
+.k-body{
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+}
+
+:root{
+  --k-header-offset: 92px;
+}
+
+.k-hero,
+.k-section,
+.checker-section,
+.k-ball-section{
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  scroll-margin-top: var(--k-header-offset);
+}
+
+/* =========================
+   ACTIVE SECTION MARKER · “encaje” visual
+   ========================= */
+
+.k-section-header{
+  opacity: 0.7;
+  transform: translateY(-2px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.k-snap-active .k-section-header{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.k-snap-active .k-section-num,
+.k-snap-active .k-section-label{
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.k-snap-active .k-section-num{
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+}
+
+.k-snap-active .k-section-label{
+  background: rgba(0,0,0,0.25);
+  color: #fff;
+}
+
+.k-snap-active{
+  position: relative;
+}
+
+.k-snap-active::after{
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 18px;
+  pointer-events: none;
+  z-index: 18;
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.18),
+    0 18px 40px rgba(0,0,0,0.18);
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+/* Keep interactive layers above the frame */
+.k-snap-active .k-final-overlay,
+.k-snap-active .color-grid,
+.k-snap-active .ballStage{
+  position: relative;
+  z-index: 2;
+}
+
+/* Checker: keep tiles under, marquee over */
+.k-snap-active .checker-tiles{
+  position: absolute;
+  z-index: 1;
+}
+
+.k-snap-active .marquee{
+  position: absolute;
+  z-index: 12;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .k-body{ scroll-snap-type: none; }
+  .k-snap-active::after{ transition: none; }
+  .k-section-header{ transition: none; }
+}
+
+@media (max-width: 768px){
+  :root{ --k-header-offset: 78px; }
+  .k-snap-active::after{ inset: 10px; border-radius: 14px; }
+}
