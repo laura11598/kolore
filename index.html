@@ -38,7 +38,7 @@
     <!-- HERO -->
     <section class="k-hero">
 
-      <h1 class="k-hero-quote">La vida</br> de color </br> rosa</h1>
+      <h1 class="k-hero-quote">La vida<br> de color<br> rosa</h1>
       <p class="p-k-hero">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit temporibus </p>
       <input type="button" class="k-hero-button" value="explorar">
     </section>
@@ -207,16 +207,19 @@
   </div> -->
 </section>
     <!-- FINAL -->
-    <section class="k-section k-section-final">
-        <p class="k-final-text k-hero-quote">
-        DIME QUE ERES<br>
-        DE CLASE MEDIA<br>
-        SIN DECIRME<BR>
-        QUE COMPARTES<BR>
-        NETFLIX CON 8
-      </p>
+    <section class="k-section k-section-final" id="final">
       <canvas id="threeFinal"></canvas>
 
+      <div class="k-final-overlay">
+        <p class="k-final-text k-hero-quote"
+           data-scramble-final="DIME QUE ERES\nDE CLASE MEDIA\nSIN DECIRME\nQUE COMPARTES\nNETFLIX CON 8">
+          DIME QUE ERES<br>
+          DE CLASE MEDIA<br>
+          SIN DECIRME<br>
+          QUE COMPARTES<br>
+          NETFLIX CON 8
+        </p>
+      </div>
     </section>
 
 
@@ -225,7 +228,7 @@
   <footer class="k-footer">
   <div class="k-footer-inner">
     <div class="k-footer-left">
-      <img src="images/dlp-logo-white.png" alt="logotipo kolore">
+      <img class="k-footer-logo" src="images/dlp-logo-white.png" alt="logotipo kolore">
       <p class="k-footer-meta">TFM LABASAD · Laura de la Pisa · 2025</p>
     </div>
 
@@ -242,4 +245,4 @@
   <script type="module" src="js/three.js"></script>
   
 </body>
-</html>          
+</html>         
